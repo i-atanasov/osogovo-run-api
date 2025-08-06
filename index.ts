@@ -4,13 +4,8 @@ import 'dotenv/config';
 import { signUpHandler } from './signUpHandler';
 
 const app = express();
-const corsOrigin ={
-    origin:'http://localhost:3000',
-    credentials:true,            
-    optionSuccessStatus:200
-}
 
-app.use(cors(corsOrigin));
+app.use(cors({origin: true})); // Enable CORS for all origins
 app.use(express.json()); // Middleware to parse JSON bodies
 
 app.post('/register', signUpHandler.post);

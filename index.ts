@@ -7,6 +7,10 @@ const app = express();
 
 app.use(cors({origin: true})); // Enable CORS for all origins
 app.use(express.json()); // Middleware to parse JSON bodies
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 
 app.post('/register', signUpHandler.post);
 

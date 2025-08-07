@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "@neondatabase/serverless": "^1.0.1",
+    "@vercel/edge": "^1.2.2",
     "axios": "^1.10.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
@@ -22,6 +23,7 @@
     "postgres": "^3.4.7"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/jest": "^30.0.0",
     "@types/react": "^19.1.8",

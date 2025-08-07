@@ -5,16 +5,17 @@ import { signUpHandler } from './handlers/signUpHandler';
 
 const app = express();
 
-app.use(cors({origin: true})); // Enable CORS for all origins
+app.use(cors({origin: ["http://localhost:3000", "https://osogovorun.vercel.app/"]})); 
 app.use(express.json()); // Middleware to parse JSON bodies
-// app.use(function (req, res, next) {
-//     res.header("Access-Control-Allow-Origin", process.env.ALLOWED_ORIGIN);
-//     res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-//     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");  
-//     res.header("Access-Control-Allow-Credentials", "true");
 
-//   next();
-// });
+app.get("/test-cors-get", function (req, res) {
+  res.status(200).json({ success: true });
+});
+
+app.post("/test-cors-post", function (req, res) {
+  res.status(200).json({ success: true });
+});
+
 
 app.get('/', (req, res) => {
     res.send('Welcome to the Osogovo Run API');

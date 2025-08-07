@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
-import { signUpHandler } from '../handlers/signUpHandler';
+import { signUpHandler } from './handlers/signUpHandler';
 
 const app = express();
 
@@ -16,6 +16,9 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Osogovo Run API');
+});
 app.post('/register', signUpHandler.post);
 
 // Start the server

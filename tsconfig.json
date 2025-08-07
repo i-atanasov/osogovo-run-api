@@ -72,7 +72,7 @@
   },
   "include": [
     "*"
-, "api/index.ts", "handlers/signUpHandler.ts", "api/get.ts"  ],
+, "index.ts", "handlers/signUpHandler.ts", "api/get.ts"  ],
   "exclude": [
     "node_modules",
   ]
